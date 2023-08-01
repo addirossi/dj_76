@@ -20,7 +20,7 @@ def product_details(request, product_id):
     try:
         prod = Product.objects.get(id=product_id)
         print(prod.name)
-        template_name = 'details.html'
+        template_name = 'main/details.html'
         return render(request, template_name, {'product': prod})
     except Product.DoesNotExist:
         raise Http404('Product not found')
